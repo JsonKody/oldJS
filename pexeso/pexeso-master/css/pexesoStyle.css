@@ -1,0 +1,91 @@
+/* Cascading Style Sheets */
+  
+body,html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+
+body {
+  background: #000 url(../images/wood.jpg) bottom center;
+  background-size: cover;
+}
+
+
+#board {
+  /* border: 1px solid red; */
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+
+#game {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 80%;
+    width: 80%;
+    padding: 8em;
+}
+
+
+.container { 
+  width: 8vw;
+  height: 8vw;
+  position: relative;
+  perspective: 800px;
+  margin: 0.4em;
+}
+
+
+.card {
+  display: flex;
+  font: 8em serif;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.7s;
+  transform-origin: left center;
+}
+
+.card figure {
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 6px;
+  }
+ 
+
+  .card .front {
+    background: #371daa  url('../images/pexeso.png') no-repeat center center;
+    background-size: cover;
+  }
+  .card .back {
+    color: rgb(20, 119, 86);
+    background: #f0efea;
+    transform: rotateY( 180deg );
+    display: flex;
+  }
+
+  .back img {
+    align-self: flex-end;
+  }
+
+
+  .card.flipped {
+    transform: rotateY( 180deg );
+    transform: translateX( 100% ) rotateY( -180deg );
+  }
